@@ -1,0 +1,43 @@
+{
+  "journals": [
+    {
+      "id": "Golabi2025RAIRO_EVCharging",
+      "type": "article",
+      "title": "Advanced models and a hybrid method for electric vehicle charging scheduling with diverse charger characteristics",
+      "authors": ["M. Golabi", "A. Azerine", "A. Oulamara", "L. Idoumghar"],
+      "year": 2025,
+      "venue": "RAIRO-Oper. Res.",
+      "volume": "59",
+      "number": "3",
+      "pages": "1681-1701",
+      "doi": "10.1051/ro/2025056",
+      "url": "https://doi.org/10.1051/ro/2025056",
+      "bibtex": "@article{Golabi2025,...}"
+    }
+    // more journal entries ...
+  ],
+  "intl": [
+    {
+      "id": "Azerine2025BiLevelCEC",
+      "type": "inproceedings",
+      "title": "Bi-Level Optimization of Electric Vehicle Charging Scheduling Using Hybrid Genetic Algorithm and Reinforcement Learning",
+      "authors": ["A. Azerine", "M. Golabi", "L. Idoumghar"],
+      "year": 2025,
+      "venue": "IEEE Congress on Evolutionary Computation (CEC), Hangzhou, China",
+      "url": ""
+    }
+    // more intl conferences ...
+  ],
+  "national": [
+    {
+      "id": "Shavarani2025InteractionROADEF",
+      "type": "inproceedings",
+      "title": "Interaction design in a decision tree-based interactive evolutionary multi-objective algorithm",
+      "authors": ["S. M. Shavarani", "M. Golabi", "L. Idoumghar"],
+      "year": 2025,
+      "venue": "26ème congrès annuel de la Société Française de Recherche Opérationnelle et d'Aide à la Décision (ROADEF), Marne-la-Vallée, France",
+      "url": ""
+    }
+    // more national entries ...
+  ]
+}

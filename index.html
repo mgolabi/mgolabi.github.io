@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mahmoud Golabi (Ph.D., HDR) — Permanent Researcher at IRIMAS, Université de Haute-Alsace</title>
+<meta name="description" content="Academic site of Mahmoud Golabi: bio, education, experience, projects, and publications." />
+<meta name="author" content="Mahmoud Golabi" />
+<meta property="og:title" content="Mahmoud Golabi (Ph.D., HDR)" />
+<meta property="og:description" content="Permanent Researcher at IRIMAS, Université de Haute-Alsace" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="assets/favicon.ico" />
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#1f2937;     /* gray-800 */
+    --muted:#6b7280;    /* gray-500 */
+    --line:#e5e7eb;     /* gray-200 */
+    --primary:#0ea5e9;  /* sky-500 */
+    --primary-2:#22c55e;/* emerald-500 */
+    --accent:#6366f1;   /* indigo-500 */
+    --chip:#eef2ff;     /* indigo-50 */
+    --shadow:0 8px 24px rgba(15,23,42,.08);
+    --radius:16px;
+    --radius-lg:22px;
+    --maxw:1100px;
+    --header-h:64px;
+  }
+  section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial;
+    line-height:1.6;
+    padding-top: var(--header-h); /* keep content below fixed header */
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* --- Fixed, always-visible header --- */
+  header{
+    position: fixed; top:0; left:0; right:0; z-index:1000;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+    height: var(--header-h);
+  }
+  .nav{
+    max-width:var(--maxw); margin:0 auto;
+    display:flex; justify-content:center; align-items:center;
+    height:100%; padding:0 20px;
+  }
+  nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+  nav a{
+    padding:10px 14px; border-radius:999px;
+  }
+  nav a:hover{background:#f1f5f9;text-decoration:none}
+  .cta{
+    background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    color:#fff; box-shadow:var(--shadow);
+  }
+  .cta:hover{filter:brightness(1.05)}
+
+  /* --- Masthead --- */
+  .masthead{max-width:var(--maxw);margin:0 auto;padding:28px 20px 8px;text-align:center}
+  .masthead h1{margin:0;font-size:36px;font-weight:800;letter-spacing:.3px}
+  .masthead h2{margin:8px 0 0;color:var(--muted);font-size:18px;font-weight:500}
+
+  /* --- Layout --- */
+  .container{max-width:var(--maxw);margin:0 auto;padding:24px 20px}
+  .section{padding:28px 0}
+  .section h2{margin:0 0 18px;font-size:26px;letter-spacing:.2px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+  /* --- About: left photo / right bio --- */
+  .hero{display:grid;gap:24px}
+  @media(min-width:900px){.hero{grid-template-columns:320px 1fr;align-items:start}}
+  .avatar{width:280px;height:280px;border-radius:var(--radius-lg);object-fit:cover;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff;margin:auto}
+  .bio{font-size:17px}
+  .link-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .link-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);color:var(--text)}
+  .link-pill:hover{transform:translateY(-1px)}
+  .link-pill svg{width:18px;height:18px;display:inline-block}
+
+  /* --- Timelines --- */
+  .timeline{position:relative;padding-left:20px}
+  .timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);margin:10px 0}
+  .tl-item::before{content:"";position:absolute;left:-6px;top:18px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:0 0 0 3px #fff}
+  .meta{color:var(--muted);font-size:14px}
+
+  /* --- Project cards --- */
+  .grid{display:grid;gap:16px}
+  @media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+  .card{padding:18px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
+  .tag{display:inline-block;margin-right:6px;margin-top:6px;font-size:12px;padding:4px 8px;border-radius:999px;background:var(--chip);border:1px solid #e0e7ff;color:#3730a3}
+
+  /* --- Publications --- */
+  .pub-wrap{padding:18px}
+  .pub-section{margin-top:12px}
+  .pub-header{display:flex;align-items:center;justify-content:space-between;margin:6px 0 12px}
+  .pub-header h3{margin:0;font-size:20px}
+  .pub-list{display:grid;gap:12px}
+  .pub{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
+  .pub .title{font-weight:700}
+  .chip{display:inline-block;margin-right:8px;margin-top:8px;font-size:12px;padding:4px 10px;border-radius:999px;background:#f8fafc;border:1px solid var(--line)}
+  .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .btn{padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);cursor:pointer}
+  .btn:hover{transform:translateY(-1px)}
+  .year{display:inline-block;margin-left:8px;padding:2px 8px;font-size:12px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8}
+  /* --- Publications subsection separation & styling (overrides) --- */
+
+/* Make each subsection a distinct white card */
+.pub-section {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin-top: 24px;           /* stronger spacing than the old 12px */
+}
+
+/* Extra separation between consecutive subsections */
+.pub-section + .pub-section {
+  margin-top: 32px;
+  padding-top: 0;             /* padding is on the card already */
+  border-top: none;           /* card border makes the divider unnecessary */
+}
+
+/* Header line under each subsection title */
+.pub-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
+}
+
+/* Optional: slim accent bar on the left of each subsection */
+.pub-section::before {
+  content: "";
+  position: absolute;
+  left: -8px; top: 12px; bottom: 12px;
+  width: 4px; border-radius: 4px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
+}
+
+  /* --- Footer --- */
+  footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);padding:22px 20px}
+  /* --- Compact, single-column publications --- */
+.pub-section{ padding:12px }                 /* smaller card padding */
+.pub-list{ display:block }                   /* force single column */
+.pub{
+  padding:0;
+  border:none;
+  background:transparent;
+  box-shadow:none;
+  margin:0;
+}
+.pub + .pub{                                  /* thin divider between items */
+  margin-top:8px;
+  padding-top:8px;
+  border-top:1px dashed var(--line);
+}
+.pub .title{ font-weight:600; line-height:1.35 }
+.pub .meta{ font-size:14px }                  /* smaller metadata text */
+.chip{ font-size:11px; padding:2px 6px; margin-top:4px; border-radius:6px }
+.year{ font-size:11px; padding:1px 6px }
+
+/* Make action controls look like inline links to save space */
+.actions{ margin-top:4px; gap:6px }
+.btn{
+  padding:0;
+  border:none;
+  background:transparent;
+  box-shadow:none;
+  color:var(--accent);
+  text-decoration:underline;
+  border-radius:0;
+  cursor:pointer;
+}
+.btn:hover{ transform:none; text-decoration:none }
+
+</style>
+</head>
+<body>
+  
+  <header>
+    <div class="nav">
+      <!-- Brand removed on purpose. Menu centered. -->
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact" class="cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Centered masthead -->
+  <section class="masthead">
+    <h1>Mahmoud Golabi (Ph.D., HDR)</h1>
+    <h2>Permanent Researcher at IRIMAS, Université de Haute-Alsace</h2>
+  </section>
+
+  <main class="container">
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="hero">
+        <div style="text-align:center">
+          <img class="avatar" src="assets/avatar.png" alt="Portrait of Mahmoud Golabi" />
+        </div>
+        <div class="panel" style="padding:18px">
+          <p class="bio">
+            </p>Mahmoud Golabi is a tenured researcher and lecturer at Université de Haute-Alsace, France. He began his academic career with a Ph.D. from Eastern Mediterranean University, Cyprus, on evolutionary approaches for complex logistics problems, and subsequently served as an Assistant Professor in Cyprus after graduating in 2017. In 2019, he joined UHA as a Postdoctoral Researcher and was later appointed as a permanent researcher and lecturer. In July 2025, he defended his Habilitation à Diriger des Recherches (HDR), titled “From Classical to Learning-Enhanced Optimization: Advancing Logistics and Interactive Multi-Objective Search.”
+
+            </p>His main research interests lie in the integration of exact methods, optimization algorithms, and machine learning techniques to address large-scale and complex real-world problems, with applications in logistics, chemistry, and materials science. In addition, he explores advanced paradigms in evolutionary multi-objective optimization and quantum-inspired optimization. He teaches undergraduate and graduate courses at Université de Haute-Alsace, and his work has been published in leading international journals and conferences in optimization and machine learning.
+          </p>
+          <div class="link-row" aria-label="External profiles">
+            <!-- Google Scholar -->
+            <a class="link-pill" href="https://scholar.google.com/citations?user=zzv2TIYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" title="Google Scholar">
+              <!-- Graduation cap icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1 8l11 5 8-3.636V15h2V8L12 3zM5 12.5V16c0 2.761 3.582 5 8 5s8-2.239 8-5v-1.5l-8 3.5-8-3.5z"/></svg>
+              Google Scholar
+            </a>
+            <!-- LinkedIn -->
+            <a class="link-pill" href="https://www.linkedin.com/in/mahmoud-golabi-hdr-ph-d-7b228485/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.983 3.5c0 1.38-1.12 2.5-2.505 2.5C1.12 6 .002 4.88.002 3.5.002 2.12 1.12 1 2.478 1s2.505 1.12 2.505 2.5zM.5 8h4v16h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2C19.4 8 20 11 20 14.7V24h-4v-8.1c0-1.9-.03-4.35-2.65-4.35-2.66 0-3.07 2.08-3.07 4.22V24H8V8z"/></svg>
+              LinkedIn
+            </a>
+            <!-- ResearchGate -->
+            <a class="link-pill" href="https://www.researchgate.net/profile/Mahmoud-Golabi?ev=hdr_xprf" target="_blank" rel="noopener" title="ResearchGate">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h9a6 6 0 1 1 0 12H9.8l2.6 5H8L5.5 15H3V3zm12 6a3 3 0 0 0-3-3H6v6h6a3 3 0 0 0 3-3z"/></svg>
+              ResearchGate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+  <h2>Education</h2>
+  <div class="timeline">
+
+    <!-- HDR -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Accreditation to Supervise Research (HDR)</div>
+          <div class="meta"><strong>University of Haute-Alsace</strong> — Mulhouse, France</div>
+        </div>
+        <div class="meta">July, 2025</div>
+      </div>
+      <div class="meta"><strong>Title:</strong> From Classical to Learning-Enhanced Optimization: Advancing Logistics and Interactive Multi-Objective Search</div>
+    </article>
+
+    <!-- Ph.D. -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Ph.D. in Industrial Engineering (Focused on Optimization)</div>
+          <div class="meta"><strong>Eastern Mediterranean University</strong> (Cyprus)</div>
+        </div>
+        <div class="meta">Sep, 2012 – Aug, 2017</div>
+      </div>
+      <div class="meta"><strong>Thesis Title:</strong> Stochastic Facility Location Problem with Distributed Demands along the Network Edges</div>
+    </article>
+
+    <!-- M.Sc. -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">M.Sc. in Operations Management</div>
+          <div class="meta"><strong>Azad University of Sanandaj</strong> (Iran)</div>
+        </div>
+        <div class="meta">Sep, 2007 – Mar, 2010</div>
+      </div>
+      <div class="meta"><strong>Thesis Title:</strong> Applying and Comparing Multiple Criteria Decision Making Techniques for Evaluating Countries based on Human Development Index</div>
+    </article>
+
+    <!-- B.Sc. -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">B.Sc. in Industrial Engineering</div>
+          <div class="meta"><strong>University of Kurdistan</strong> (Iran)</div>
+        </div>
+        <div class="meta">Sep, 2001 – Sep, 2005</div>
+      </div>
+      <div class="meta"><strong>Thesis Title:</strong> Comparison Study of JIT and MRPΠ Systems</div>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+  <h2>Work Experience</h2>
+  <div class="timeline">
+
+    <!-- June 2021 – ongoing -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div><div style="font-weight:700">June, 2021 – ongoing</div></div>
+      </div>
+
+      <div class="role">
+        <div style="font-weight:700">Permanent Researcher (AI & Optimization) & Lecturer</div>
+        <div class="meta"><strong>Université de Haute-Alsace</strong> (France)</div>
+      </div>
+    </article>
+
+    <!-- Mar 2021 – May 2021 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Senior Research Fellow in Optimization</div>
+          <div class="meta"><strong>Ecole Nationale de l’Aviation Civile</strong> (France)</div>
+        </div>
+        <div class="meta">Mar, 2021 – May, 2021</div>
+      </div>
+    </article>
+
+    <!-- Oct 2019 – Mar 2021 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Post-doc Fellow in Optimization</div>
+          <div class="meta"><strong>Université de Haute-Alsace</strong> (France)</div>
+        </div>
+        <div class="meta">Oct, 2019 – Mar, 2021</div>
+      </div>
+    </article>
+
+    <!-- Sep 2017 – Aug 2019 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Assistant Professor of Industrial Engineering</div>
+          <div class="meta"><strong>Girne American University</strong> (Cyprus)</div>
+        </div>
+        <div class="meta">Sep, 2017 – Aug, 2019</div>
+      </div>
+    </article>
+
+    <!-- Feb 2013 – Aug 2017 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Lecturer and Head of Research Assistants</div>
+          <div class="meta"><strong>Eastern Mediterranean University</strong> (Cyprus)</div>
+        </div>
+        <div class="meta">Feb, 2013 – Aug, 2017</div>
+      </div>
+    </article>
+
+    <!-- Sep 2010 – Aug 2012 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Lecturer</div>
+          <div class="meta"><strong>Azad University of Mahabad</strong> (Iran)</div>
+        </div>
+        <div class="meta">Sep, 2010 – Aug, 2012</div>
+      </div>
+    </article>
+
+    <!-- Sep 2007 – Feb 2010 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Consultant (Project Management, Investment Appraisal)</div>
+          <div class="meta"><strong>Fanavaran Nowandish Mad Company</strong> (Iran)</div>
+        </div>
+        <div class="meta">Sep, 2007 – Feb, 2010</div>
+      </div>
+    </article>
+
+    <!-- Nov 2005 – Jun 2006 -->
+    <article class="tl-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div>
+          <div style="font-weight:700">Production Engineer (Production Planning)</div>
+          <div class="meta"><strong>Mahshahr Pipe Protection Company</strong> (Iran)</div>
+        </div>
+        <div class="meta">Nov, 2005 – Jun, 2006</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+  <h2>Funded Research Projects</h2>
+
+  <div class="grid grid-3">
+    <!-- 2025 -->
+    <article class="card">
+      <div class="meta">2025 · EU funding</div>
+      <h3 style="margin:4px 0 6px">GEN-Q Evacuation</h3>
+      <p class="meta">Quantum-Inspired Metaheuristics for Evacuation Planning in disaster response optimization.</p>
+    </article>
+
+    <article class="card">
+      <div class="meta">2025 · EU funding</div>
+      <h3 style="margin:4px 0 6px">GEN-Q HealthCare</h3>
+      <p class="meta">Hybrid Quantum-Inspired Metaheuristics for healthcare logistics focused on scheduling and routing in home healthcare systems.</p>
+    </article>
+
+    <!-- 2024 -->
+    <article class="card">
+      <div class="meta">2024 · ANR funding</div>
+      <h3 style="margin:4px 0 6px">GreenFOAM</h3>
+      <p class="meta">Learning-driven optimization in computational materials science to explore environment-friendly foam designs.</p>
+    </article>
+
+    <article class="card">
+      <div class="meta">2024 · UHA funding</div>
+      <h3 style="margin:4px 0 6px">PRIORITERRES</h3>
+      <p class="meta">Rapid Inspection Plan for the intelligent organization of disaster-affected territories.</p>
+    </article>
+
+    <article class="card">
+      <div class="meta">2024 · UHA funding</div>
+      <h3 style="margin:4px 0 6px">L4V</h3>
+      <p class="meta">Towards LoRaWAN communications adapted to the VANET context for optimizing network architecture in V2X/V2I communications.</p>
+    </article>
+
+    <!-- 2023 -->
+    <article class="card">
+      <div class="meta">2023 · UHA funding</div>
+      <h3 style="margin:4px 0 6px">TruckLoading</h3>
+      <p class="meta">Optimization and AI methods for solving truck loading problems with industry applications.</p>
+    </article>
+
+    <article class="card">
+      <div class="meta">2023 · UHA funding</div>
+      <h3 style="margin:4px 0 6px">ZEO-OPT</h3>
+      <p class="meta">Learning-integrated metaheuristics for zeolite structure determination.</p>
+    </article>
+
+    <!-- 2022 -->
+    <article class="card">
+      <div class="meta">2022 · UHA funding</div>
+      <h3 style="margin:4px 0 6px">AI-LPWAN</h3>
+      <p class="meta">Leveraging artificial intelligence to improve LPWAN communications.</p>
+    </article>
+  </div>
+</section>
+
+
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+  <h2>Publications</h2>
+  <div class="panel pub-wrap">
+    <div class="pub-section" id="sec-journals">
+      <div class="pub-header"><h3>International Journals</h3></div>
+      <div class="pub-list" id="list-journals"></div>
+    </div>
+
+    <div class="pub-section" id="sec-intl-confs">
+      <div class="pub-header"><h3>International Conferences</h3></div>
+      <div class="pub-list" id="list-intl"></div>
+    </div>
+
+    <div class="pub-section" id="sec-national">
+      <div class="pub-header"><h3>National French Conferences</h3></div>
+      <div class="pub-list" id="list-national"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Load JS -->
+
+
+    <!-- CONTACT -->
+ <section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="panel" style="padding:18px">
+    <p>
+      📧 <a href="mailto:mahmoud.golabi@uha.fr">mahmoud.golabi@uha.fr</a><br>
+      🏛️ IRIMAS — Université de Haute-Alsace<br>
+      12 rue des Frères Lumière<br>
+      68093 MULHOUSE Cedex, FRANCE
+    </p>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Mahmoud Golabi
+  </footer>
+ <script src="data/bibtexParse.js"></script>
+ <script src="data/publications.js" defer></script>
+
+
+  
+</body>
+</html>
