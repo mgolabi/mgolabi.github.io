@@ -645,31 +645,26 @@
 
   <!-- Dropdown script -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile menu toggle
-  const mobileBtn = document.querySelector(".mobile-menu-btn");
-  const nav = document.querySelector(".nav");
-  mobileBtn.addEventListener("click", () => {
-    nav.classList.toggle("mobile-open");
-  });
+  // Handle Career dropdown toggle
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropbtn = document.querySelector(".dropbtn");
+    const dropdown = document.querySelector(".dropdown");
 
-  // Career dropdown toggle (on click for mobile)
-  document.querySelectorAll(".dropbtn").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault(); // prevent "#" scroll
-      const dropdown = btn.parentElement;
-
-      // close any other open dropdowns
-      document.querySelectorAll(".dropdown").forEach(d => {
-        if (d !== dropdown) d.classList.remove("show");
-      });
-
-      // toggle this one
+    // Toggle dropdown on button click
+    dropbtn.addEventListener("click", (e) => {
+      e.preventDefault();
       dropdown.classList.toggle("show");
     });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("show");
+      }
+    });
   });
-});
 </script>
+
 
 
 
