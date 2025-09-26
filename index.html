@@ -55,11 +55,124 @@
     display:flex; justify-content:center; align-items:center;
     height:100%; padding:0 20px;
   }
-  nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+
+  /* --- Navigation Styles --- */
+  .nav-links{display:flex;gap:14px;list-style:none;margin:0;padding:0}
   nav a{
     padding:10px 14px; border-radius:999px;
+    color: var(--text);
+    text-decoration: none;
   }
   nav a:hover{background:#f1f5f9;text-decoration:none}
+
+  /* --- Dropdown Styles --- */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropbtn {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    z-index: 1001;
+    margin-top: 4px;
+    padding: 8px 0;
+    list-style: none;
+  }
+
+  .dropdown-content li {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: var(--text);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+    margin: 2px 8px;
+    transition: background-color 0.2s ease;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f5f9;
+  }
+
+  .dropdown.show .dropdown-content {
+    display: block;
+  }
+
+  /* Mobile menu button - hidden by default */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--text);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .mobile-menu-btn {
+      display: block;
+      position: absolute;
+      right: 20px;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      border-top: 1px solid var(--line);
+      padding: 10px 0;
+      gap: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .nav.mobile-open .nav-links {
+      display: flex;
+    }
+
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      border: none;
+      transform: none;
+      margin: 0;
+      background: #f8f9fa;
+      border-radius: 8px;
+      margin: 5px 20px;
+    }
+
+    .nav-links > li {
+      margin: 0;
+    }
+
+    nav a {
+      border-radius: 0;
+      display: block;
+      padding: 12px 20px;
+    }
+  }
+
   .cta{
     background:linear-gradient(135deg,var(--primary),var(--primary-2));
     color:#fff; box-shadow:var(--shadow);
@@ -192,21 +305,37 @@
 </head>
 <body>
   
-  <header>
-    <div class="nav">
-      <!-- Brand removed on purpose. Menu centered. -->
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#contact" class="cta">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="nav">
+    <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+
+        <!-- Career dropdown -->
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Career ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+
+
+
 
   <!-- Centered masthead -->
   <section class="masthead">
@@ -512,6 +641,41 @@
  <script src="data/publications.js" defer></script>
 
 
-  
+
+
+  <!-- Dropdown script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const nav = document.querySelector(".nav");
+  mobileBtn.addEventListener("click", () => {
+    nav.classList.toggle("mobile-open");
+  });
+
+  // Career dropdown toggle (on click for mobile)
+  document.querySelectorAll(".dropbtn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault(); // prevent "#" scroll
+      const dropdown = btn.parentElement;
+
+      // close any other open dropdowns
+      document.querySelectorAll(".dropdown").forEach(d => {
+        if (d !== dropdown) d.classList.remove("show");
+      });
+
+      // toggle this one
+      dropdown.classList.toggle("show");
+    });
+  });
+});
+</script>
+
+
+
+
+
+
+ 
 </body>
 </html>
