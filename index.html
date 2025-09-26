@@ -652,13 +652,15 @@
     const dropbtn = document.querySelector(".dropbtn");
 
     // Toggle full nav menu in mobile
-    mobileBtn.addEventListener("click", () => {
+    mobileBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // don’t trigger the outside click
       nav.classList.toggle("mobile-open");
     });
 
     // Toggle Career dropdown
     dropbtn.addEventListener("click", (e) => {
       e.preventDefault();
+      e.stopPropagation();
       dropdown.classList.toggle("show");
     });
 
@@ -667,9 +669,15 @@
       if (!dropdown.contains(e.target) && !dropbtn.contains(e.target)) {
         dropdown.classList.remove("show");
       }
+
+      // Close hamburger menu if clicking outside nav + button
+      if (!nav.contains(e.target) && !mobileBtn.contains(e.target)) {
+        nav.classList.remove("mobile-open");
+      }
     });
   });
 </script>
+
 
 
 
