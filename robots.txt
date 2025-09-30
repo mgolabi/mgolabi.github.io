@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mgolabi.github.io/sitemap.xml
